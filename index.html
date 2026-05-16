@@ -166,37 +166,43 @@
 </div>
 
 
-<style>
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  text-align: center;
-}
+<div id='em8u66iner' style='width:100%; height:1500px; overflow:hidden;'>
+  <iframe 
+    id="autoReloadFrame"
+    allowfullscreen='allowfullscreen'
+    class='customEmbedFrame_1500'
+    src=''
+    style='width:100%; height:1500px; border:none;'>
+  </iframe>
+</div>
 
-.video-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 50px auto;
-  height: 4500px;
-  border-radius: 12px;
-  overflow: hidden; /* disables scrolling inside container */
-}
+<script>
+  var urls = [
+    "https://www.feedback.marketing2advertising.com",
+    "https://www.feedback.marketing2advertising.com/key/now.html",
+    "https://www.feedback.marketing2advertising.com/vj/mukk.html",
+    "https://www.feedback.marketing2advertising.com/absa/firimu.html"
+  ];
 
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 12px;
-  pointer-events: auto; /* ensure iframe is interactive */
-}
-</style>
+  var lastIndex = -1;
 
+  function loadRandomURL(){
+    var frame = document.getElementById("autoReloadFrame");
+    if(frame){
+      var newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * urls.length);
+      } while(newIndex === lastIndex);
 
+      lastIndex = newIndex;
+      frame.src = urls[newIndex];
+    }
+  }
 
-<div class="video-container">
-  <iframe allowfullscreen="" scrolling="no" src="https://ug-vjs.github.io/moviesug/sce3re.html"></iframe>
+  loadRandomURL();
+  setInterval(loadRandomURL, 180000);
+</script>
+
 </div>
 
 <title>The Story of VJs in Uganda – Understanding Uganda’s Video Jockey Culture</title>
